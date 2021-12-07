@@ -197,7 +197,7 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         g2d.setFont(buttonFont);
 
         int x = (menuFace.width - startButton.width) / 2;
-        int y = (int) ((menuFace.height - startButton.height) * 0.8);
+        int y = (int) ((menuFace.height - startButton.height) * 0.6);
 
         startButton.setLocation(x, y);
 
