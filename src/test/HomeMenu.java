@@ -143,6 +143,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         g2d.setStroke(tmp);
 
         g2d.setColor(prev);
+
+        Image picture = Toolkit.getDefaultToolkit().getImage("Space.jpg"); //background picture
+        g2d.drawImage(picture, 0, 0, this);
+
     }
 
     private void drawText(Graphics2D g2d) {
