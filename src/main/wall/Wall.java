@@ -53,6 +53,8 @@ public class Wall {
     private int ballCount;
     private boolean ballLost;
 
+    private int individualScore;
+
     public Wall(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos) {
 
         this.startPoint = new Point(ballPos);
@@ -194,6 +196,9 @@ public class Wall {
              * because for every brick program checks for horizontal and vertical impacts
              */
             brickCount--;
+
+            individualScore += 10 ;
+
         } else if (impactBorder()) {
             ball.reverseX();
         } else if (ball.getPosition().getY() < area.getY()) {
@@ -294,6 +299,8 @@ public class Wall {
     public void resetBallCount() {
         ballCount = 3;
     }
+
+    public int getScore() { return individualScore; }
 
     private Brick makeBrick(Point point, Dimension size, int type) {
         Brick out;
