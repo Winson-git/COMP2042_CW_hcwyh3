@@ -269,9 +269,12 @@ public class GameBoard extends JComponent implements KeyListener, MouseListener,
     public void keyPressed(KeyEvent keyEvent) {
         switch (keyEvent.getKeyCode()) {
             case KeyEvent.VK_A:
+            case KeyEvent.VK_LEFT:
                 wall.player.moveLeft();
+
                 break;
             case KeyEvent.VK_D:
+            case KeyEvent.VK_RIGHT:
                 wall.player.movRight();
                 break;
             case KeyEvent.VK_ESCAPE:
