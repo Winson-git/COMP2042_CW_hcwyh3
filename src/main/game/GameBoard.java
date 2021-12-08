@@ -15,7 +15,13 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package test;
+package main.game;
+
+import main.player.Player;
+import main.wall.Wall;
+import main.ball.Ball;
+import main.brick.Brick;
+import main.debug.DebugConsole;
 
 import javax.swing.*;
 import java.awt.*;

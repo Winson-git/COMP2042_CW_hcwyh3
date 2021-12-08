@@ -15,7 +15,9 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package test;
+package main.display;
+
+import main.game.GameFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -26,12 +28,13 @@ import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 
 
-public class Info extends JComponent implements MouseListener, MouseMotionListener {
+public class HomeMenu extends JComponent implements MouseListener, MouseMotionListener {
 
-    private static final String GREETINGS = "";
-    private static final String GAME_TITLE = "";
-    private static final String CREDITS = "";
-    private static final String BACK_TEXT = "Back";
+    private static final String GREETINGS = "Welcome to:";
+    private static final String GAME_TITLE = "Brick Destroy";
+    private static final String CREDITS = "Version 0.1";
+    private static final String START_TEXT = "Start";
+    private static final String INFO_TEXT = "Info";
     private static final String MENU_TEXT = "Exit";
 
     private static final Color BG_COLOR = new Color(134,51,255);//( purple )background color
@@ -44,8 +47,9 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
     private static final float[] DASHES = {12, 6};
 
     private Rectangle menuFace;
-    private Rectangle backButton;
+    private Rectangle startButton;
     private Rectangle menuButton;
+    private Rectangle infoButton;
 
 
     private BasicStroke borderStoke;
@@ -58,11 +62,12 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
 
     private GameFrame owner;
 
-    private boolean backClicked;
+    private boolean startClicked;
     private boolean menuClicked;
+    private boolean infoClicked;
 
 
-    public Info(GameFrame owner, Dimension area) {
+    public HomeMenu(GameFrame owner, Dimension area) {
 
         this.setFocusable(true);
         this.requestFocusInWindow();
@@ -77,8 +82,9 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
         this.setPreferredSize(area);
 
         Dimension btnDim = new Dimension(area.width / 3, area.height / 12);
-        backButton = new Rectangle(btnDim);
+        startButton = new Rectangle(btnDim);
         menuButton = new Rectangle(btnDim);
+        infoButton = new Rectangle(btnDim);
 
         borderStoke = new BasicStroke(BORDER_SIZE, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND, 0, DASHES, 0);
         borderStoke_noDashes = new BasicStroke(BORDER_SIZE, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND);
@@ -86,7 +92,7 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
         greetingsFont = new Font("Noto Mono", Font.PLAIN, 25);
         gameTitleFont = new Font("Noto Mono", Font.BOLD, 40);
         creditsFont = new Font("Monospaced", Font.PLAIN, 10);
-        buttonFont = new Font("Monospaced", Font.PLAIN, backButton.height - 2);
+        buttonFont = new Font("Monospaced", Font.PLAIN, startButton.height - 2);
 
 
     }
@@ -144,7 +150,7 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
 
         g2d.setColor(prev);
 
-        Image picture = Toolkit.getDefaultToolkit().getImage("Info-Img.jpg"); //background picture
+        Image picture = Toolkit.getDefaultToolkit().getImage("Space.jpg"); //background picture
         g2d.drawImage(picture, 0, 0, this);
 
     }
@@ -186,39 +192,67 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
 
         FontRenderContext frc = g2d.getFontRenderContext();
 
-        Rectangle2D txtRect = buttonFont.getStringBounds(BACK_TEXT, frc);
+        Rectangle2D txtRect = buttonFont.getStringBounds(START_TEXT, frc);
+        Rectangle2D itxtRect = buttonFont.getStringBounds(INFO_TEXT, frc);
         Rectangle2D mTxtRect = buttonFont.getStringBounds(MENU_TEXT, frc);
 
         g2d.setFont(buttonFont);
 
-        int x = (menuFace.width - backButton.width) / 2;
-        int y = (int) ((menuFace.height - backButton.height) * 0.8);
+        int x = (menuFace.width - startButton.width) / 2;
+        int y = (int) ((menuFace.height - startButton.height) * 0.6);
 
-        backButton.setLocation(x, y);
+        startButton.setLocation(x, y);
 
-        x = (int) (backButton.getWidth() - txtRect.getWidth()) / 2;
-        y = (int) (backButton.getHeight() - txtRect.getHeight()) / 2;
+        x = (int) (startButton.getWidth() - txtRect.getWidth()) / 2;
+        y = (int) (startButton.getHeight() - txtRect.getHeight()) / 2;
 
-        x += backButton.x;
-        y += backButton.y + (backButton.height * 0.9);
+        x += startButton.x;
+        y += startButton.y + (startButton.height * 0.9);
 
 
-        if (backClicked) {
+        if (startClicked) {
             Color tmp = g2d.getColor();
             g2d.setColor(CLICKED_BUTTON_COLOR);
-            g2d.draw(backButton);
+            g2d.draw(startButton);
             g2d.setColor(CLICKED_TEXT);
-            g2d.drawString(BACK_TEXT, x, y);
+            g2d.drawString(START_TEXT, x, y);
             g2d.setColor(tmp);
         } else {
-            g2d.draw(backButton);
-            g2d.drawString(BACK_TEXT, x, y);
+            g2d.draw(startButton);
+            g2d.drawString(START_TEXT, x, y);
         }
 
-        x = backButton.x;
-        y = backButton.y;
+        x = startButton.x;
+        y = startButton.y;
 
         y *= 1.2;
+
+        infoButton.setLocation(x, y);
+
+        x = (int) (infoButton.getWidth() - itxtRect.getWidth()) / 2;
+        y = (int) (infoButton.getHeight() - itxtRect.getHeight()) / 2;
+
+        x += infoButton.x;
+        y += infoButton.y + (infoButton.height * 0.9);
+
+
+        if (infoClicked) {
+            Color tmp = g2d.getColor();
+            g2d.setColor(CLICKED_BUTTON_COLOR);
+            g2d.draw(infoButton);
+            g2d.setColor(CLICKED_TEXT);
+            g2d.drawString(INFO_TEXT, x, y);
+            g2d.setColor(tmp);
+        } else {
+            g2d.draw(infoButton);
+            g2d.drawString(INFO_TEXT, x, y);
+        }
+
+        x = infoButton.x;
+        y = infoButton.y;
+
+        y *= 1.2;
+
 
         menuButton.setLocation(x, y);
 
@@ -227,7 +261,7 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
         y = (int) (menuButton.getHeight() - mTxtRect.getHeight()) / 2;
 
         x += menuButton.x;
-        y += menuButton.y + (backButton.height * 0.9);
+        y += menuButton.y + (startButton.height * 0.9);
 
         if (menuClicked) {
             Color tmp = g2d.getColor();
@@ -247,8 +281,11 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
     @Override
     public void mouseClicked(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();
-        if (backButton.contains(p)) {
-            owner.enableHomeScreen();
+        if (startButton.contains(p)) {
+            owner.enableGameBoard();
+
+        }else if (infoButton.contains(p)) {
+            owner.enableInfo();
 
         } else if (menuButton.contains(p)) {
             System.out.println("Goodbye " + System.getProperty("user.name"));
@@ -259,11 +296,15 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
     @Override
     public void mousePressed(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();
-        if (backButton.contains(p)) {
-            backClicked = true;
-            repaint(backButton.x, backButton.y, backButton.width + 1, backButton.height + 1);
+        if (startButton.contains(p)) {
+            startClicked = true;
+            repaint(startButton.x, startButton.y, startButton.width + 1, startButton.height + 1);
 
-        } else if (menuButton.contains(p)) {
+        } else if (infoButton.contains(p)) {
+            infoClicked = true;
+            repaint(infoButton.x, infoButton.y, infoButton.width + 1, infoButton.height + 1);
+
+        }else if (menuButton.contains(p)) {
             menuClicked = true;
             repaint(menuButton.x, menuButton.y, menuButton.width + 1, menuButton.height + 1);
         }
@@ -271,10 +312,15 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
 
     @Override
     public void mouseReleased(MouseEvent mouseEvent) {
-        if (backClicked) {
-            backClicked = false;
-            repaint(backButton.x, backButton.y, backButton.width + 1, backButton.height + 1);
-        } else if (menuClicked) {
+        if (startClicked) {
+            startClicked = false;
+            repaint(startButton.x, startButton.y, startButton.width + 1, startButton.height + 1);
+
+        } else if (infoClicked) {
+            infoClicked = false;
+            repaint(infoButton.x, infoButton.y, infoButton.width + 1, infoButton.height + 1);
+
+        }else if (menuClicked) {
             menuClicked = false;
             repaint(menuButton.x, menuButton.y, menuButton.width + 1, menuButton.height + 1);
         }
@@ -299,7 +345,7 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
     @Override
     public void mouseMoved(MouseEvent mouseEvent) {
         Point p = mouseEvent.getPoint();
-        if (backButton.contains(p) || menuButton.contains(p))
+        if (startButton.contains(p) || menuButton.contains(p))
             this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         else
             this.setCursor(Cursor.getDefaultCursor());

@@ -1,4 +1,6 @@
-package test;
+package main.brick;
+
+import main.ball.Ball;
 
 import java.awt.*;
 import java.awt.Point;
@@ -59,7 +61,7 @@ abstract public class Brick {
             crack.reset();
         }
 
-        protected void makeCrack(Point2D point, int direction) {
+        public void makeCrack(Point2D point, int direction) {
             Rectangle bounds = Brick.this.brickFace.getBounds();
 
             Point impact = new Point((int) point.getX(), (int) point.getY());
@@ -173,7 +175,7 @@ abstract public class Brick {
     private static Random rnd;
 
     private String name;
-    Shape brickFace;
+    public Shape brickFace;
 
     private Color border;
     private Color inner;
