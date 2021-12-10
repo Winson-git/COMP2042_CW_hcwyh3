@@ -19,13 +19,26 @@ package main;
 
 import main.game.GameFrame;
 
+import javax.sound.sampled.*;
 import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 
 
 public class GraphicsMain {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         EventQueue.invokeLater(() -> new GameFrame().initialize());
+
+        File file = new File("BG_audio.wav");
+        AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
+        Clip clip = AudioSystem.getClip();
+        clip.open(audioStream);
+
+        clip.start();
+
+
+
     }
 
 }
