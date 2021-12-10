@@ -17,7 +17,7 @@
  */
 package main.display;
 
-import main.game.GameFrame;
+import main.GameFrame;
 
 import javax.swing.*;
 import java.awt.*;

@@ -17,8 +17,6 @@
  */
 package main;
 
-import main.game.GameFrame;
-
 import javax.sound.sampled.*;
 import java.awt.*;
 import java.io.File;
@@ -36,8 +34,6 @@ public class GraphicsMain {
         clip.open(audioStream);
 
         clip.start();
-
-
 
     }
 
