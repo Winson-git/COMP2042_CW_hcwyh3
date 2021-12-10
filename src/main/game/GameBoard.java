@@ -36,8 +36,9 @@ public class GameBoard extends JComponent implements KeyListener, MouseListener,
     private static final String EXIT = "Exit";
     private static final String PAUSE = "Pause Menu";
     private static final int TEXT_SIZE = 30;
-    private static final Color MENU_COLOR = new Color(0, 255, 0);
-
+    private static final Color MENU_COLOR = new Color(204, 204, 255);
+    private static final Color SCORE_COLOR = new Color(227, 32, 250);
+    private static final Color MESSAGE_COLOR = new Color(32, 237, 250);
 
 
     private static final int DEF_WIDTH = 600;
@@ -130,8 +131,9 @@ public class GameBoard extends JComponent implements KeyListener, MouseListener,
 
         clear(g2d);
 
-        g2d.setColor(Color.BLUE);
+        g2d.setColor(MESSAGE_COLOR);
         g2d.drawString(message, 10, 420);
+        g2d.setColor(SCORE_COLOR);
         g2d.drawString(individualScore, 10,400);
 
         drawBall(wall.ball, g2d);
