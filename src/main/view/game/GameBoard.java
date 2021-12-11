@@ -18,7 +18,7 @@
 package main.view.game;
 
 import main.model.player.Player;
-import main.model.wall.Wall;
+import main.controller.wall.Wall;
 import main.model.ball.Ball;
 import main.model.brick.Brick;
 import main.controller.debug.DebugConsole;

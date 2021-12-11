@@ -17,7 +17,7 @@
  */
 package main.controller.debug;
 
-import main.model.wall.Wall;
+import main.controller.wall.Wall;
 
 import javax.swing.*;
 import javax.swing.event.ChangeListener;

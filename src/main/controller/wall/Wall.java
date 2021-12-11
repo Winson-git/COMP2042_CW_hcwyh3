@@ -15,7 +15,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package main.model.wall;
+package main.controller.wall;
 
 import main.model.ball.Ball;
 import main.model.ball.RubberBall;

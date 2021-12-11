@@ -19,7 +19,7 @@ package main.controller.debug;
 
 import main.model.ball.Ball;
 import main.view.game.GameBoard;
-import main.model.wall.Wall;
+import main.controller.wall.Wall;
 
 import javax.swing.*;
 import java.awt.*;
