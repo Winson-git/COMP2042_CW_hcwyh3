@@ -15,15 +15,15 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package main.wall;
+package main.model.wall;
 
-import main.ball.Ball;
-import main.ball.RubberBall;
-import main.brick.Brick;
-import main.brick.CementBrick;
-import main.brick.ClayBrick;
-import main.brick.SteelBrick;
-import main.player.Player;
+import main.model.ball.Ball;
+import main.model.ball.RubberBall;
+import main.model.brick.Brick;
+import main.model.brick.CementBrick;
+import main.model.brick.ClayBrick;
+import main.model.brick.SteelBrick;
+import main.model.player.Player;
 
 import java.awt.*;
 import java.awt.geom.Point2D;

@@ -17,6 +17,8 @@
  */
 package main;
 
+import main.controller.GameFrame;
+
 import javax.sound.sampled.*;
 import java.awt.*;
 import java.io.File;

@@ -15,11 +15,11 @@
  *  You should have received a copy of the GNU General Public License
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package main;
+package main.controller;
 
-import main.display.HomeMenu;
-import main.display.Info;
-import main.game.GameBoard;
+import main.view.display.HomeMenu;
+import main.view.display.Info;
+import main.view.game.GameBoard;
 
 import javax.swing.*;
 import java.awt.*;

@@ -1,6 +1,4 @@
-package main.brick;
-
-import main.brick.Brick;
+package main.model.brick;
 
 import java.awt.*;
 import java.awt.geom.GeneralPath;
