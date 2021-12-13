@@ -50,6 +50,9 @@ public class GraphicsMain {
         clip.open(audioStream);
 
         clip.start();
+        while (true){
+            clip.start();
+        }
 
     }
 
