@@ -24,7 +24,9 @@ import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-
+/**
+ * this is debug panel
+ */
 public class DebugPanel extends JPanel {
 
     private static final Color DEF_BKG = Color.WHITE;
@@ -38,6 +40,10 @@ public class DebugPanel extends JPanel {
 
     private Wall wall;
 
+    /**
+     * where which key will call which which function
+     * @param wall
+     */
     public DebugPanel(Wall wall) {
 
         this.wall = wall;

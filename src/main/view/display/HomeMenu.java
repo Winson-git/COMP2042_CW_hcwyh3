@@ -27,7 +27,9 @@ import java.awt.event.MouseMotionListener;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 
-
+/**
+ * this is the HomeMenu Class where we can veiw what is in the Home menu
+ */
 public class HomeMenu extends JComponent implements MouseListener, MouseMotionListener {
 
     private static final String GREETINGS = "Welcome to:";
@@ -67,6 +69,11 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
     private boolean infoClicked;
 
 
+    /**
+     * this is the constructor
+     * @param owner
+     * @param area
+     */
     public HomeMenu(GameFrame owner, Dimension area) {
 
         this.setFocusable(true);
@@ -97,11 +104,19 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
     }
 
+    /**
+     * CSS for paint
+     * @param g
+     */
 
     public void paint(Graphics g) {
         drawMenu((Graphics2D) g);
     }
 
+    /**
+     * CSS for Menu
+     * @param g2d
+     */
 
     public void drawMenu(Graphics2D g2d) {
 
@@ -130,6 +145,11 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
         g2d.setColor(prevColor);
     }
 
+    /**
+     * CSS for container
+     * @param g2d
+     */
+
     private void drawContainer(Graphics2D g2d) {
         Color prev = g2d.getColor();
 
@@ -155,6 +175,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
     }
 
+    /**
+     * CSS for text
+     * @param g2d
+     */
     private void drawText(Graphics2D g2d) {
 
         g2d.setColor(TEXT_COLOR);
@@ -188,6 +212,10 @@ public class HomeMenu extends JComponent implements MouseListener, MouseMotionLi
 
     }
 
+    /**
+     * CSS for Button
+     * @param g2d
+     */
     private void drawButton(Graphics2D g2d) {
 
         FontRenderContext frc = g2d.getFontRenderContext();

@@ -10,6 +10,8 @@ import java.util.Random;
 
 /**
  * Created by filippo on 04/09/16.
+ * this is class of Brick
+ * where set Brick details
  */
 abstract public class Brick {
 
@@ -23,7 +25,9 @@ abstract public class Brick {
     public static final int LEFT_IMPACT = 300;
     public static final int RIGHT_IMPACT = 400;
 
-
+    /**
+     * this is the class of crack
+     */
     public class Crack {
 
         private static final int CRACK_SECTIONS = 3;
@@ -42,7 +46,11 @@ abstract public class Brick {
         private int crackDepth;
         private int steps;
 
-
+        /**
+         *
+         * @param crackDepth
+         * @param steps
+         */
         public Crack(int crackDepth, int steps) {
 
             crack = new GeneralPath();
@@ -51,16 +59,27 @@ abstract public class Brick {
 
         }
 
-
+        /**
+         * return the crack back
+         * @return
+         */
         public GeneralPath draw() {
 
             return crack;
         }
 
+        /**
+         * reset the crack
+         */
         public void reset() {
             crack.reset();
         }
 
+        /**
+         * CSS of Crack like how will it crack and so
+         * @param point
+         * @param direction
+         */
         public void makeCrack(Point2D point, int direction) {
             Rectangle bounds = Brick.this.brickFace.getBounds();
 

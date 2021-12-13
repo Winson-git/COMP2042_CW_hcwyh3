@@ -6,6 +6,8 @@ import java.awt.Point;
 
 /**
  * Created by filippo on 04/09/16.
+ *
+ *this is the clay brick class
  */
 public class ClayBrick extends Brick {
 
@@ -14,7 +16,11 @@ public class ClayBrick extends Brick {
     private static final Color DEF_BORDER = Color.GRAY;
     private static final int CLAY_STRENGTH = 1;
 
-
+    /**
+     * it set the size point and class for the ball
+     * @param point
+     * @param size
+     */
     public ClayBrick(Point point, Dimension size) {
         super(NAME, point, size, DEF_BORDER, DEF_INNER, CLAY_STRENGTH);
     }

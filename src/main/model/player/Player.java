@@ -22,6 +22,9 @@ import main.model.ball.Ball;
 import java.awt.*;
 
 
+/**
+ *this is the class of Player
+ */
 public class Player {
 
 
@@ -36,6 +39,14 @@ public class Player {
     private int min;
     private int max;
 
+    /**
+     *
+     * this is the place where call ballPoint
+     * @param ballPoint
+     * @param width
+     * @param height
+     * @param container
+     */
 
     public Player(Point ballPoint, int width, int height, Rectangle container) {
         this.ballPoint = ballPoint;
@@ -46,6 +57,12 @@ public class Player {
 
     }
 
+    /**
+     * set the location of it the look the width and height
+     * @param width
+     * @param height
+     * @return
+     */
     private Rectangle makeRectangle(int width, int height) {
         Point p = new Point((int) (ballPoint.getX() - (width / 2)), (int) ballPoint.getY());
         return new Rectangle(p, new Dimension(width, height));
@@ -55,6 +72,9 @@ public class Player {
         return playerFace.contains(b.getPosition()) && playerFace.contains(b.down);
     }
 
+    /**
+     * send the movement of the ball
+     */
     public void move() {
         double x = ballPoint.getX() + moveAmount;
         if (x < min || x > max)

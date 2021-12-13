@@ -29,7 +29,9 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.Random;
 
-
+/**
+ * this is wall class
+ */
 public class Wall {
 
     private static final int LEVELS_COUNT = 5;
@@ -54,6 +56,17 @@ public class Wall {
     private boolean ballLost;
 
     private int individualScore;
+
+    /**
+     * set the basic stuff in wall class
+     * where deflaut all stuff
+     *
+     * @param drawArea
+     * @param brickCount
+     * @param lineCount
+     * @param brickDimensionRatio
+     * @param ballPos
+     */
 
     public Wall(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio, Point ballPos) {
 
@@ -85,6 +98,15 @@ public class Wall {
 
     }
 
+    /**
+     * this make the level type
+     * @param drawArea
+     * @param brickCnt
+     * @param lineCnt
+     * @param brickSizeRatio
+     * @param type
+     * @return
+     */
     private Brick[] makeSingleTypeLevel(Rectangle drawArea, int brickCnt, int lineCnt, double brickSizeRatio, int type) {
         /*
           if brickCount is not divisible by line count,brickCount is adjusted to the biggest
@@ -174,6 +196,14 @@ public class Wall {
         ball = new RubberBall(ballPos);
     }
 
+    /**
+     * set the level of the game by calling whihch type of the brick
+     * @param drawArea
+     * @param brickCount
+     * @param lineCount
+     * @param brickDimensionRatio
+     * @return
+     */
     private Brick[][] makeLevels(Rectangle drawArea, int brickCount, int lineCount, double brickDimensionRatio) {
         Brick[][] tmp = new Brick[LEVELS_COUNT][];
         tmp[0] = makeSingleTypeLevel(drawArea, brickCount, lineCount, brickDimensionRatio, CLAY);
@@ -183,6 +213,7 @@ public class Wall {
         tmp[4] = makeChessboardLevel(drawArea, brickCount, lineCount, brickDimensionRatio, CEMENT, CEMENT);
         return tmp;
     }
+
 
     public void move() {
         player.move();

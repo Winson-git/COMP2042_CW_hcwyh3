@@ -21,13 +21,16 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
 
+/**
+ * Class of ball
+ * this is the class that will send the rubber ball , the color of the ball and so fort
+ */
 public class RubberBall extends Ball {
 
 
     private static final int DEF_RADIUS = 10;
     private static final Color DEF_INNER_COLOR = new Color(255, 219, 88);
     private static final Color DEF_BORDER_COLOR = DEF_INNER_COLOR.darker().darker();
-
 
     public RubberBall(Point2D center) {
         super(center, DEF_RADIUS, DEF_RADIUS, DEF_INNER_COLOR, DEF_BORDER_COLOR);

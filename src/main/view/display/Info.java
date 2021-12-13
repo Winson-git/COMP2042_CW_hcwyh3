@@ -28,6 +28,10 @@ import java.awt.font.FontRenderContext;
 import java.awt.geom.Rectangle2D;
 
 
+/**
+ * this is the info class where will show what the info page look like
+ */
+
 public class Info extends JComponent implements MouseListener, MouseMotionListener {
 
     private static final String GREETINGS = "";
@@ -63,6 +67,11 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
     private boolean backClicked;
     private boolean menuClicked;
 
+    /**
+     *
+     * @param owner
+     * @param area
+     */
 
     public Info(GameFrame owner, Dimension area) {
 
@@ -98,7 +107,10 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
         drawMenu((Graphics2D) g);
     }
 
-
+    /**
+     * draw the menu
+     * @param g2d
+     */
     public void drawMenu(Graphics2D g2d) {
 
         drawContainer(g2d);
@@ -126,6 +138,11 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
         g2d.setColor(prevColor);
     }
 
+    /**
+     * CSS for thecontainer
+     * @param g2d
+     */
+
     private void drawContainer(Graphics2D g2d) {
         Color prev = g2d.getColor();
 
@@ -150,6 +167,11 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
         g2d.drawImage(picture, 0, 0, this);
 
     }
+
+    /**
+     * CSS for the text
+     * @param g2d
+     */
 
     private void drawText(Graphics2D g2d) {
 
@@ -183,6 +205,11 @@ public class Info extends JComponent implements MouseListener, MouseMotionListen
 
 
     }
+
+    /**
+     * CSS for the button
+     * @param g2d g2d
+     */
 
     private void drawButton(Graphics2D g2d) {
 

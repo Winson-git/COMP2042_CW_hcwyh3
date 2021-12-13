@@ -5,6 +5,10 @@ import java.awt.geom.GeneralPath;
 import java.awt.geom.Point2D;
 
 
+/**
+ * this is the Cement Brick
+ *
+ */
 public class CementBrick extends Brick {
 
 
@@ -16,7 +20,11 @@ public class CementBrick extends Brick {
     private Crack crack;
     private Shape brickFace;
 
-
+    /**
+     * call the size and link wiht the cement brick class where we set on top
+     * @param point
+     * @param size
+     */
     public CementBrick(Point point, Dimension size) {
         super(NAME, point, size, DEF_BORDER, DEF_INNER, CEMENT_STRENGTH);
         crack = new Crack(DEF_CRACK_DEPTH, DEF_STEPS);

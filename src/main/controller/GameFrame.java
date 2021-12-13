@@ -27,6 +27,9 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 
 
+/**
+ * this is the Game Frame calss
+ */
 public class GameFrame extends JFrame implements WindowFocusListener {
 
     private static final String DEF_TITLE = "Brick Destroy";
@@ -37,6 +40,9 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
     private boolean gaming;
 
+    /**
+     * this set the size of the game frame
+     */
     public GameFrame() {
         super();
 
@@ -57,6 +63,10 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
     }
 
+    /**
+     * this call the function of exit
+     * it will exit the game
+     */
     public void initialize() {
         this.setTitle(DEF_TITLE);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -65,6 +75,10 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         this.setVisible(true);
     }
 
+    /**
+     * this call the function of gameboard
+     * it bring people to game
+     */
     public void enableGameBoard() {
         this.dispose();
         this.remove(homeMenu);
@@ -76,6 +90,9 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
     }
 
+    /**
+     * this is the function where will go back homemenu from info
+     */
     public void enableHomeScreen() {
         this.dispose();
         this.remove(info);
@@ -87,6 +104,9 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
     }
 
+    /**
+     * this is the function where will go to info
+     */
     public void enableInfo() {
         this.dispose();
         this.remove(homeMenu);
@@ -98,6 +118,9 @@ public class GameFrame extends JFrame implements WindowFocusListener {
 
     }
 
+    /**
+     * the size of it
+     */
     private void autoLocate() {
         Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
         int x = (size.width - this.getWidth()) / 2;

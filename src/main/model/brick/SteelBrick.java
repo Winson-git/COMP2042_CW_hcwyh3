@@ -21,7 +21,10 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.Random;
 
-
+/**
+ * this is Steel Brick class
+ * it set all the steel brick details
+ */
 public class SteelBrick extends Brick {
 
     private static final String NAME = "Steel Brick";
@@ -33,6 +36,11 @@ public class SteelBrick extends Brick {
     private Random rnd;
     private Shape brickFace;
 
+    /**
+     * it all the brick size all from super class
+     * @param point
+     * @param size
+     */
     public SteelBrick(Point point, Dimension size) {
         super(NAME, point, size, DEF_BORDER, DEF_INNER, STEEL_STRENGTH);
         rnd = new Random();

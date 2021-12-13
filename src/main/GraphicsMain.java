@@ -24,8 +24,22 @@ import java.awt.*;
 import java.io.File;
 import java.io.IOException;
 
-
+/**
+ * This class runs the game
+ *
+ * @author winson
+ */
 public class GraphicsMain {
+
+    /**
+     *
+     * @param args args
+     * @throws UnsupportedAudioFileException
+     * @throws IOException
+     * @throws LineUnavailableException
+     *
+     * This method Allow Audio play behind the background
+     */
 
     public static void main(String[] args)throws UnsupportedAudioFileException, IOException, LineUnavailableException {
         EventQueue.invokeLater(() -> new GameFrame().initialize());

@@ -6,6 +6,8 @@ import java.awt.geom.RectangularShape;
 
 /**
  * Created by filippo on 04/09/16..
+ *
+ * this is the abstract class ball
  */
 abstract public class Ball {
 
@@ -24,6 +26,14 @@ abstract public class Ball {
     private int speedX;
     private int speedY;
 
+    /**
+     * set the ball color and how the ball run
+     * @param center
+     * @param radiusA
+     * @param radiusB
+     * @param inner
+     * @param border
+     */
     public Ball(Point2D center, int radiusA, int radiusB, Color inner, Color border) {
         this.center = center;
 
@@ -46,8 +56,18 @@ abstract public class Ball {
         speedY = 0;
     }
 
+    /**
+     * call the shape of the ball
+     * @param center
+     * @param radiusA
+     * @param radiusB
+     * @return
+     */
     protected abstract Shape makeBall(Point2D center, int radiusA, int radiusB);
 
+    /**
+     * the move of ball
+     */
     public void move() {
         RectangularShape tmp = (RectangularShape) ballFace;
         center.setLocation((center.getX() + speedX), (center.getY() + speedY));
