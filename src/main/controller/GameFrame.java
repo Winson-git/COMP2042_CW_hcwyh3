@@ -66,20 +66,26 @@ public class GameFrame extends JFrame implements WindowFocusListener {
     /**
      * this call the function of exit
      * it will exit the game
+     * @return
      */
-    public void initialize() {
+    public String initialize() {
+        String test = "Pass";
         this.setTitle(DEF_TITLE);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.pack();
         this.autoLocate();
         this.setVisible(true);
+
+        return test;
     }
 
     /**
      * this call the function of gameboard
      * it bring people to game
+     * @return
      */
-    public void enableGameBoard() {
+    public String enableGameBoard() {
+        String test = "Pass";
         this.dispose();
         this.remove(homeMenu);
         this.add(gameBoard, BorderLayout.CENTER);
@@ -88,12 +94,16 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         /*to avoid problems with graphics focus controller is added here*/
         this.addWindowFocusListener(this);
 
+        return test;
+
     }
 
     /**
      * this is the function where will go back homemenu from info
+     * @return
      */
-    public void enableHomeScreen() {
+    public String enableHomeScreen() {
+        String test = "Pass";
         this.dispose();
         this.remove(info);
         this.add(homeMenu, BorderLayout.CENTER);
@@ -102,12 +112,15 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         /*to avoid problems with graphics focus controller is added here*/
         this.addWindowFocusListener(this);
 
+        return test;
     }
 
     /**
      * this is the function where will go to info
+     * @return
      */
-    public void enableInfo() {
+    public String enableInfo() {
+        String test = "Pass";
         this.dispose();
         this.remove(homeMenu);
         this.add(info, BorderLayout.CENTER);
@@ -116,6 +129,7 @@ public class GameFrame extends JFrame implements WindowFocusListener {
         /*to avoid problems with graphics focus controller is added here*/
         this.addWindowFocusListener(this);
 
+        return test;
     }
 
     /**
